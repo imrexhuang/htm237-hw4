@@ -46,7 +46,7 @@ window.fbAsyncInit = function(){
      } else {
         alert('User cancelled login or did not fully authorize.');
       }
-   });
+   },{scope: 'user_groups'} );
 
 
     // 2. 以 FB.api 拿到使用者的 group 列表
