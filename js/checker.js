@@ -9,8 +9,8 @@ var junkGroups = [];
 
 // 用 Ajax 自 http://spamgroup.tonyq.org/groups/jsonp 取得垃圾社團列表
 
-$.getJSON("http://jsbin.com/wacadi/6", {}, function(data){ 
-//$.getJSON("http://jsbin.com/jaziroja/1", {}, function(data){  
+//$.getJSON("http://jsbin.com/wacadi/6", {}, function(data){ 
+$.getJSON("http://jsbin.com/jaziroja/1", {}, function(data){  
 
     // 將每筆資料的 GID 放進 junkGroups 陣列中。
     //
