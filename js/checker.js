@@ -39,9 +39,9 @@ window.fbAsyncInit = function(){
 
     FB.login(function(response) {
      if (response.authResponse) {
-       alert('Welcome!  Fetching your information.... ');
+       //alert('Welcome!  Fetching your information.... ');
        FB.api('/me', function(response) {
-         alert('Good to see you, ' + response.name + '.');
+         //alert('Good to see you, ' + response.name + '.');
       });
      } else {
         alert('User cancelled login or did not fully authorize.');
@@ -54,7 +54,11 @@ window.fbAsyncInit = function(){
     "/me/groups",
     function (response) {
       if (response && !response.error) {
-        alert(response);
+        
+        var i = 0;
+        for(i in response){
+          alert(response[i].id);
+        }
         /* handle the result */
       // 拿到使用者 group 列表的 response 之後：
       results.after('<div class="hw4-complete alert alert-info">掃描完成</div>');
