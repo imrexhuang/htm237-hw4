@@ -57,8 +57,8 @@ window.fbAsyncInit = function(){
               /* handle the result */
               // 拿到使用者 group 列表的 response 之後：
 
-               for(var i=0;i<junkGroups.length;i++){
-                  if(junkGroups[i] == response.data[i].id){
+               for(var j=0;j<junkGroups.length;j++){
+                  if(junkGroups[j] == response.data[i].id){
                     //junkGroupsVerify.push(junkGroups[i]);
                     //results.after('<div class="hw4-complete alert alert-info">掃描出垃圾社團:'+response.data[i].name+'</div>');
                     alert(response.data[i].id+""+response.data[i].name);
