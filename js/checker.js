@@ -1,5 +1,4 @@
-  alert("rex 0");//rex
-  
+
 // jQuery objects
 //
 var startButton = $('.hw4-start-button'), // 「開始掃描」按鈕
@@ -11,12 +10,12 @@ var junkGroups = [];
 // 用 Ajax 自 http://spamgroup.tonyq.org/groups/jsonp 取得垃圾社團列表
 
 $.getJSON("http://jsbin.com/jaziroja/1", {}, function(data){  
-  alert("rex 2");//rex
-  
+
     // 將每筆資料的 GID 放進 junkGroups 陣列中。
     //
        data.forEach(function(record){
-       junkGroups.push(data[i].GID);
+          junkGroups.push(record.GID);
+       }); 
     // ...
     //
     startButton.removeAttr('disabled').removeClass('disabled');
@@ -24,7 +23,7 @@ $.getJSON("http://jsbin.com/jaziroja/1", {}, function(data){
 
 // 設定 Facebook AppID
 window.fbAsyncInit = function(){
-  alert("rex 1");//rex
+
   FB.init({
     appId: '1431676380422774', // 若可以，請換成自己的 App ID !
     status: true
