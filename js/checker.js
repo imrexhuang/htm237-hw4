@@ -54,7 +54,7 @@ window.fbAsyncInit = function(){
     "/me/groups",
     function (response) {
       if (response && !response.error) {
-        
+        alert(response.data);
         var i = 0;
         for(i in response){
           alert(response[i].id);
