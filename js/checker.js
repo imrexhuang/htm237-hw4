@@ -21,6 +21,7 @@ $.getJSON("http://jsbin.com/jaziroja/1", {}, function(data){
     startButton.removeAttr('disabled').removeClass('disabled');
 });
 
+
 // 設定 Facebook AppID
 window.fbAsyncInit = function(){
 
@@ -51,10 +52,15 @@ window.fbAsyncInit = function(){
        FB.api("/me/groups",function (response) {  
         if (response && !response.error) {
             for(var i=0;i<response.data.length;++i){
-              alert(response.data[i].id+""+response.data[i].name);
+              //alert(response.data[i].id+""+response.data[i].name);
             }
           /* handle the result */
         // 拿到使用者 group 列表的 response 之後：
+
+        for(var i=0;i<junkGroups.length;i++){
+            alert(junkGroups[i]);
+        }
+        
         results.after('<div class="hw4-complete alert alert-info">掃描完成</div>');
       }
     }
