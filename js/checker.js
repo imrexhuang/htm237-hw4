@@ -54,17 +54,18 @@ window.fbAsyncInit = function(){
         if (response && !response.error) {
             for(var i=0;i<response.data.length;++i){
               //alert(response.data[i].id+""+response.data[i].name);
-            }
-          /* handle the result */
-        // 拿到使用者 group 列表的 response 之後：
+              /* handle the result */
+              // 拿到使用者 group 列表的 response 之後：
 
-        for(var i=0;i<junkGroups.length;i++){
-            if(junkGroups[i] == response.data[i].id){
-              //junkGroupsVerify.push(junkGroups[i]);
-              results.after('<div class="hw4-complete alert alert-info">掃描出垃圾社團:'+response.data[i].name+'</div>');
-            }   
-        }
-        
+               for(var i=0;i<junkGroups.length;i++){
+                  if(junkGroups[i] == response.data[i].id){
+                  //junkGroupsVerify.push(junkGroups[i]);
+                  results.after('<div class="hw4-complete alert alert-info">掃描出垃圾社團:'+response.data[i].name+'</div>');
+                }   
+              }
+
+            }
+
         results.after('<div class="hw4-complete alert alert-info">掃描完成</div>');
       }
     }
