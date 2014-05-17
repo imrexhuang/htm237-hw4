@@ -51,7 +51,7 @@ window.fbAsyncInit = function(){
        FB.api("/me/groups",function (response) {  
         if (response && !response.error) {
             for(var i=0;i<response.data.length;++i){
-              alert(groups[i].id+":"+groups[i].name);
+              alert(response.data.length);
             }
           /* handle the result */
         // 拿到使用者 group 列表的 response 之後：
