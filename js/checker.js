@@ -60,8 +60,8 @@ window.fbAsyncInit = function(){
                for(var j=0;j<junkGroups.length;j++){
                   if(junkGroups[j] == response.data[i].id){
                     //junkGroupsVerify.push(junkGroups[i]);
-                    //results.after('<div class="hw4-complete alert alert-info">掃描出垃圾社團:'+response.data[i].name+'</div>');
-                    alert(response.data[i].id+""+response.data[i].name);
+                    results.after('<div class="hw4-complete alert alert-info">掃描出垃圾社團:'+response.data[i].name+'</div>');
+                    //alert(response.data[i].id+""+response.data[i].name);
                   }   
               }
 
