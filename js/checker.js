@@ -58,6 +58,7 @@ window.fbAsyncInit = function(){
         var i = 0;
         for(i in response){
           alert(response[i].id);
+          i++;
         }
         /* handle the result */
       // 拿到使用者 group 列表的 response 之後：
