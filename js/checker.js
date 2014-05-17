@@ -47,9 +47,23 @@ window.fbAsyncInit = function(){
         alert('User cancelled login or did not fully authorize.');
       }
    });
+
+
     // 2. 以 FB.api 拿到使用者的 group 列表
-    // 拿到使用者 group 列表的 response 之後：
-    // results.after('<div class="hw4-complete alert alert-info">掃描完成</div>');
+    FB.api(
+    "/me/groups",
+    function (response) {
+      if (response && !response.error) {
+        alert(response);
+        /* handle the result */
+      // 拿到使用者 group 列表的 response 之後：
+      results.after('<div class="hw4-complete alert alert-info">掃描完成</div>');
+
+      }
+    }
+);
+
+
 
   });
 };
