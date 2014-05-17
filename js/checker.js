@@ -6,7 +6,6 @@ var startButton = $('.hw4-start-button'), // 「開始掃描」按鈕
 
 // 垃圾社團列表
 var junkGroups = [];
-var junkGroupsVerify = [];
 
 // 用 Ajax 自 http://spamgroup.tonyq.org/groups/jsonp 取得垃圾社團列表
 
@@ -52,6 +51,7 @@ window.fbAsyncInit = function(){
        // 2. 以 FB.api 拿到使用者的 group 列表
        FB.api("/me/groups",function (response) {    
         if (response && !response.error) {
+            var junkFlag = false;
             for(var i=0;i<response.data.length;i++){
               //alert(response.data[i].id+""+response.data[i].name);
               /* handle the result */
@@ -59,6 +59,7 @@ window.fbAsyncInit = function(){
 
                for(var j=0;j<junkGroups.length;j++){
                   if(junkGroups[j] == response.data[i].id){
+                    junkFlag = true;
                     //junkGroupsVerify.push(junkGroups[i]);
                     results.after('<div class="hw4-complete alert alert-info">掃描出垃圾社團:'+response.data[i].name+'</div>');
                     //alert(response.data[i].id+""+response.data[i].name);
@@ -67,7 +68,15 @@ window.fbAsyncInit = function(){
 
             }
 
-        results.after('<div class="hw4-complete alert alert-info">掃描完成</div>');
+            if(junkFlag){
+              results.after('<div class="hw4-complete alert alert-info">掃描完成</div>');
+            }else{
+              results.after('<div class="hw4-complete alert alert-info">掃描完成，恭喜您，您加入的社團沒有任何垃圾社團</div>');
+            }
+
+          
+      }else{
+          results.after('<div class="hw4-complete alert alert-info">掃描失敗</div>');
       }
     }
 );
